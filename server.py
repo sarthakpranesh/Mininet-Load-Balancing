@@ -1,11 +1,18 @@
 import SimpleHTTPServer
 import SocketServer
+import sys
 
-PORT = 8080
+#f = open("log-serv"+sys.argv[1]+".txt", "a")
 
-Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+class MyHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
+    def handle_one_request(self):
+	#ip = self.client_address[0]
+	#print(ip)
+        #f.write("IP:"+ip+"\n")
+        return SimpleHTTPServer.SimpleHTTPRequestHandler.handle_one_request(self)
 
-httpd = SocketServer.TCPServer(("0.0.0.0", PORT), Handler)
+print("Serving local directory")
+httpd = SocketServer.TCPServer(("", 8080), MyHandler)
 
-print "serving at port", PORT
-httpd.serve_forever()
+while True:
+    httpd.handle_request()
