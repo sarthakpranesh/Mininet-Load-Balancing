@@ -19,7 +19,11 @@ data.append(c)
 x = np.linspace(0,len(data[0]), len(data[0]))
 for i in data:
 	plt.plot(x, i)
-	
+
+s = "On load - three clients"
+plt.legend([s,s,s,'Off Load - single client'])	
+plt.xlabel("Number of Requests")
+plt.ylabel("Response Time (ms)")
 plt.show()
 
 print("qwertyuiop")
