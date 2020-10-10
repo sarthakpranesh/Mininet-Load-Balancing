@@ -2,7 +2,7 @@ import SimpleHTTPServer
 import SocketServer
 import sys
 
-#f = open("log-serv"+sys.argv[1]+".txt", "a")
+#f = open("./log/log-serv"+sys.argv[1]+".txt", "a")
 
 class MyHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     def handle_one_request(self):
