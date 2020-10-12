@@ -21,7 +21,7 @@ for i in data:
 	plt.plot(x, i)
 
 s = "On load - three clients"
-plt.legend([s,s,s,'Off Load - single client'])	
+plt.legend([s,s,s,'Off Load - single client'], prop={'size': 6})	
 plt.xlabel("Number of Requests")
 plt.ylabel("Response Time (ms)")
 plt.show()
