@@ -62,6 +62,8 @@ def MyNetwork():
 		testbase(net)
     	elif sys.argv[1] == "load":
 		testload(net)
+	elif sys.argv[1] == "bal":
+		testloadbal(net)
    	else:
 		print("Unregonised test")
     else:

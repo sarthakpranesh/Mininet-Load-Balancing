@@ -3,7 +3,8 @@ import time
 def testbase(net):
 	serv1 = net.get("serv1")
 	serv1.sendCmd("python ../server.py 1 &")
-	net.get("c4").sendCmd("python ../loadBalanceNode.py &")
+
+	net.get("c4").sendCmd("python ../loadBalanceNode.py n &")
 
 	print("--> Starting load with one client - for base performance")
 
@@ -18,7 +19,8 @@ def testbase(net):
 def testload(net):
 	serv1 = net.get("serv1")
 	serv1.sendCmd('python ../server.py 1 &')
-        net.get("c4").sendCmd("python ../loadBalanceNode.py &")
+
+        net.get("c4").sendCmd("python ../loadBalanceNode.py n &")
 
 	print("--> Starting load with three client - for testing performance under extensive load")
 	
@@ -35,3 +37,27 @@ def testload(net):
 
     	print("---> Done")
 	return
+
+def testloadbal(net):
+        serv1 = net.get("serv1")
+	serv2 = net.get("serv2")
+        serv1.sendCmd('python ../server.py 1 &')
+	serv2.sendCmd('python ../server.py 2 &')
+
+        net.get("c4").sendCmd("python ../loadBalanceNode.py bal &")
+
+        print("--> Starting load balance and three client - for testing performance")
+
+        net.get("c1").sendCmd("python ../client.py c1 &")
+        net.get("c2").sendCmd("python ../client.py c2 &")
+        net.get("c3").sendCmd("python ../client.py c3")
+
+        time.sleep(20)
+
+        net.get("c1").monitor()
+        net.get("c2").monitor()
+        net.get("c3").monitor()
+        net.get("c4").monitor()
+
+        print("---> Done")
+        return
