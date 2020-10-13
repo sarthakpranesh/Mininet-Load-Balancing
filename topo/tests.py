@@ -24,9 +24,9 @@ def testload(net):
 
 	print("--> Starting load with three client - for testing performance under extensive load")
 	
-	net.get("c1").sendCmd("python ../client.py c1 &")
-	net.get("c2").sendCmd("python ../client.py c2 &")
-	net.get("c3").sendCmd("python ../client.py c3")
+	net.get("c1").sendCmd("python ../client.py c1-load &")
+	net.get("c2").sendCmd("python ../client.py c2-load &")
+	net.get("c3").sendCmd("python ../client.py c3-load")
 
 	time.sleep(20)
 
@@ -48,9 +48,9 @@ def testloadbal(net):
 
         print("--> Starting load balance and three client - for testing performance")
 
-        net.get("c1").sendCmd("python ../client.py c1 &")
-        net.get("c2").sendCmd("python ../client.py c2 &")
-        net.get("c3").sendCmd("python ../client.py c3")
+        net.get("c1").sendCmd("python ../client.py c1-bal &")
+        net.get("c2").sendCmd("python ../client.py c2-bal &")
+        net.get("c3").sendCmd("python ../client.py c3-bal")
 
         time.sleep(20)
 
