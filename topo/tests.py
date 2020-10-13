@@ -2,7 +2,7 @@ import time
 
 def testbase(net):
 	serv1 = net.get("serv1")
-	serv1.sendCmd("python ../server.py 1 &")
+	serv1.sendCmd("python ../server.py &")
 
 	net.get("c4").sendCmd("python ../loadBalanceNode.py n &")
 
@@ -18,7 +18,7 @@ def testbase(net):
 
 def testload(net):
 	serv1 = net.get("serv1")
-	serv1.sendCmd('python ../server.py 1 &')
+	serv1.sendCmd('python ../server.py &')
 
         net.get("c4").sendCmd("python ../loadBalanceNode.py n &")
 
@@ -41,8 +41,8 @@ def testload(net):
 def testloadbal(net):
         serv1 = net.get("serv1")
 	serv2 = net.get("serv2")
-        serv1.sendCmd('python ../server.py 1 &')
-	serv2.sendCmd('python ../server.py 2 &')
+        serv1.sendCmd('python ../server.py &')
+	serv2.sendCmd('python ../server.py &')
 
         net.get("c4").sendCmd("python ../loadBalanceNode.py bal &")
 

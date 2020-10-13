@@ -1,14 +1,12 @@
 import SimpleHTTPServer
 import SocketServer
 import sys
+import time
 
-#f = open("../log/log-serv"+sys.argv[1]+".txt", "a")
 
 class MyHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     def handle_one_request(self):
-	ip = self.client_address[0]
-	print(ip)
-        #f.write("IP:"+ip+"\n")
+	time.sleep(0.1)	
         return SimpleHTTPServer.SimpleHTTPRequestHandler.handle_one_request(self)
 
 print("Serving local directory")
