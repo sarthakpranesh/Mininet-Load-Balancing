@@ -27,11 +27,11 @@ def MyNetwork():
     s1 = net.addSwitch('s1', cls=OVSKernelSwitch)
 
     info( '*** Add hosts\n')
-    c4 = net.addHost('c4', cls=Host, ip='10.0.0.4', defaultRoute=None, cpu=0.02)
+    c4 = net.addHost('c4', cls=Host, ip='10.0.0.4', defaultRoute=None, cpu=0.2)
     
-    c3 = net.addHost('c3', cls=Host, ip='10.0.0.3', defaultRoute=None, cpu=0.02)
-    c2 = net.addHost('c2', cls=Host, ip='10.0.0.2', defaultRoute=None, cpu=0.02)
-    c1 = net.addHost('c1', cls=Host, ip='10.0.0.1', defaultRoute=None, cpu=0.02)
+    c3 = net.addHost('c3', cls=Host, ip='10.0.0.3', defaultRoute=None, cpu=0.2)
+    c2 = net.addHost('c2', cls=Host, ip='10.0.0.2', defaultRoute=None, cpu=0.2)
+    c1 = net.addHost('c1', cls=Host, ip='10.0.0.1', defaultRoute=None, cpu=0.2)
    
     serv1 = net.addHost('serv1', cls=Host, ip='10.0.0.5', defaultRoute=None)
     serv2 = net.addHost('serv2', cls=Host, ip='10.0.0.6', defaultRoute=None)

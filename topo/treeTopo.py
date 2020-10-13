@@ -41,26 +41,26 @@ def myNetwork():
     s3 = net.addSwitch('s3', cls=OVSKernelSwitch)
     s1 = net.addSwitch('s1', cls=OVSKernelSwitch)
 
-    c1 = net.addHost('c1', cls=Host, ip='10.0.0.1', defaultRoute=None, cpu=0.02)
-    c2 = net.addHost('c2', cls=Host, ip='10.0.0.2', defaultRoute=None, cpu=0.02)
-    c3 = net.addHost('c3', cls=Host, ip='10.0.0.3', defaultRoute=None, cpu=0.02)
+    c1 = net.addHost('c1', cls=Host, ip='10.0.0.1', defaultRoute=None, cpu=0.2)
+    c2 = net.addHost('c2', cls=Host, ip='10.0.0.2', defaultRoute=None, cpu=0.2)
+    c3 = net.addHost('c3', cls=Host, ip='10.0.0.3', defaultRoute=None, cpu=0.2)
 
-    c4 = net.addHost('c4', cls=Host, ip='10.0.0.4', defaultRoute=None, cpu=0.02)
+    c4 = net.addHost('c4', cls=Host, ip='10.0.0.4', defaultRoute=None, cpu=0.2)
 
     serv1 = net.addHost('serv1', cls=Host, ip='10.0.0.5', defaultRoute=None)
     serv2 = net.addHost('serv2', cls=Host, ip='10.0.0.6', defaultRoute=None)
 
     info( '*** Add links\n')
-    net.addLink(c1, s1, bw=4)
-    net.addLink(c2, s1, bw=4)
-    net.addLink(c3, s2, bw=4)
-    net.addLink(c4, s2, bw=4)
-    net.addLink(s1, s3, bw=4)
-    net.addLink(s2, s3, bw=4)
+    net.addLink(c1, s1, bw=1)
+    net.addLink(c2, s1, bw=1)
+    net.addLink(c3, s2, bw=1)
+    net.addLink(c4, s2, bw=1)
+    net.addLink(s1, s3, bw=1)
+    net.addLink(s2, s3, bw=1)
 
     net.addLink(s3, c4, bw=4)
-    net.addLink(s3, serv1, bw=4)
-    net.addLink(s3, serv2, bw=4)
+    net.addLink(s3, serv1, bw=10)
+    net.addLink(s3, serv2, bw=10)
 
     info( '*** Starting network\n')
     net.build()
