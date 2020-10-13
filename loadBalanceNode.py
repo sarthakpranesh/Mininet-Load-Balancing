@@ -13,10 +13,9 @@ class MyHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 				add = self.arr[0]
 			else:
 				add = self.arr[1]
-			c = c + 1
 		else:
 			add = self.arr[0]
-
+		c = c + 1
 		#print(add)
         	self.send_header('Location', add)
         	self.end_headers()
