@@ -54,7 +54,6 @@ def myNetwork():
     net.addLink(c1, s1, bw=1)
     net.addLink(c2, s1, bw=1)
     net.addLink(c3, s2, bw=1)
-    net.addLink(c4, s2, bw=1)
     net.addLink(s1, s3, bw=1)
     net.addLink(s2, s3, bw=1)
 
