@@ -20,7 +20,7 @@ def testload(net):
 	serv1 = net.get("serv1")
 	serv1.sendCmd('python ../server.py &')
 
-        net.get("c4").sendCmd("python ../loadBalanceNode.py n &")
+    net.get("c4").sendCmd("python ../loadBalanceNode.py n &")
 
 	print("--> Starting load with three client - for testing performance under extensive load")
 	
@@ -35,7 +35,7 @@ def testload(net):
 	net.get("c3").monitor()
 	net.get("c4").monitor()
 
-    	print("---> Done")
+    print("---> Done")
 	return
 
 def testloadbal(net):
