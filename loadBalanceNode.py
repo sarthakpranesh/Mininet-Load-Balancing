@@ -4,11 +4,8 @@ import sys
 import random
 
 def RR(c, arr):
-	if (c % 2 == 0):
-		add = arr[0]
-	else:
-		add = arr[1]
-	return add
+	n = c % 2
+	return arr[n]
 
 def Random(arr):
 	n = random.randint(0,1)
