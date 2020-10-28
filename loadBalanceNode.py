@@ -18,7 +18,7 @@ class MyHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 		global c
 		self.send_response(301)
 		if (sys.argv[1] == "bal"):
-			add = RR(self.arr)
+			add = RR(c, self.arr)
 		else:
 			add = self.arr[0]
 		c = c + 1
