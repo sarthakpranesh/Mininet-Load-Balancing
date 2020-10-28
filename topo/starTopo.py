@@ -41,9 +41,9 @@ def MyNetwork():
     net.addLink(c2, s1, bw=1)
     net.addLink(c1, s1, bw=1)
 
-    net.addLink(c4, s1, bw=4)
-    net.addLink(s1, serv1, bw=10)
-    net.addLink(s1, serv2, bw=10)
+    net.addLink(c4, s1, bw=10)
+    net.addLink(s1, serv1, bw=4)
+    net.addLink(s1, serv2, bw=4)
 
     info( '*** Starting network\n')
     net.build()

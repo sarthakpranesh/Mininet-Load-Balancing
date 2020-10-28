@@ -54,10 +54,10 @@ def myNetwork():
     net.addLink(c1, s1, bw=1)
     net.addLink(c2, s1, bw=1)
     net.addLink(c3, s2, bw=1)
-    net.addLink(s1, s3, bw=1)
-    net.addLink(s2, s3, bw=1)
+    net.addLink(s1, s3, bw=2)
+    net.addLink(s2, s3, bw=2)
 
-    net.addLink(s3, c4, bw=4)
+    net.addLink(s3, c4, bw=10)
     net.addLink(s3, serv1, bw=10)
     net.addLink(s3, serv2, bw=10)
 
