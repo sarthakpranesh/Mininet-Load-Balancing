@@ -67,9 +67,9 @@ def MyNetwork():
 	elif sys.argv[1] == "bal":
 		testloadbal(net)
    	else:
-		print("Unregonised test")
-    else:
-	print("No test specified")
+		print("Unregonised test, starting cli")
+        CLI(net)
+    
     net.stop()
 
 

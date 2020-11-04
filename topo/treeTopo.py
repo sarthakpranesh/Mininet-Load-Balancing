@@ -87,7 +87,8 @@ def myNetwork():
         else:
                 print("Unregonised test")
     else:
-        print("No test specified")
+        print("No test specified, starting CLI")
+        CLI(net)
 
     net.stop()
 
